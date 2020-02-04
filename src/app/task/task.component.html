@@ -1,0 +1,59 @@
+<div
+  [class.expiredTask]="expired === true"
+  class="taskWrapper"
+  *ngIf="taskNotEditing; else taskEditing"
+>
+  <i
+    [class.fa-circle-o]="!taskCompleted"
+    [class.fa-check-circle]="taskCompleted"
+    (click)="toggleCompleted()"
+    class="fa completed"
+    aria-hidden="true"
+  ></i>
+  <span
+    [class.line]="task.isCompleted === true"
+    title="Редактировать название задачи"
+    class="name"
+    (click)="toggleTask()"
+    >{{ task.name }}
+  </span>
+  <span class="right">
+    <button
+      [class.deadline]="deadline === true"
+      [class.expired]="expired === true"
+      title="Срок задачи в днях"
+      class="term"
+    >
+      {{ task.term | date }}
+    </button>
+    <a
+      title="Посмотреть описание задачи"
+      class="nav-link"
+      [routerLink]="['/task', task.id]"
+      routerLinkActive="active"
+      ><i class="fa fa-eye" aria-hidden="true"></i
+    ></a>
+    <a>
+      <i
+        title="Закрыть задачу"
+        (click)="deleteTask()"
+        class="fa fa-trash-o"
+        aria-hidden="true"
+      ></i>
+    </a>
+  </span>
+</div>
+<ng-template #taskEditing>
+  <div class="updateWrapper">
+    <input type="text" maxlength="22" [(ngModel)]="updatedName" />
+    <!-- <input type="number" [(ngModel)]="updatedTerm" /> -->
+    <button (click)="updateTask(true, true)">Сохранить</button>
+    <button (click)="toggleTask()">Отмена</button>
+    <ngb-datepicker
+      class="picker"
+      #dp
+      [(ngModel)]="model"
+      (navigate)="date = $event.next"
+    ></ngb-datepicker>
+  </div>
+</ng-template>

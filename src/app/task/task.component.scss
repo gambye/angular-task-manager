@@ -1,0 +1,99 @@
+.updateWrapper {
+  & input,
+  button {
+    margin-right: 1rem;
+  }
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.name {
+  cursor: pointer;
+}
+
+.taskWrapper {
+  padding: 0.1rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  span {
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:nth-child(2) {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.completed {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.updateWrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  input {
+    &:nth-child(2) {
+      width: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+.right {
+  margin-left: auto;
+  vertical-align: middle;
+}
+
+.nav-link,
+.term {
+  color: white;
+  margin-right: 1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.term {
+  border: 1px solid white;
+  cursor: pointer;
+  padding: 4px 7px;
+
+  &:hover {
+    color: white;
+    background-color: #444;
+  }
+}
+
+.deadline {
+  color: orange;
+  border: 1px solid orange;
+}
+
+.expired {
+  color: red;
+  border: 1px solid red;
+}
+
+.expiredTask {
+  background-color: rgb(255, 0, 0, 0.2);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}

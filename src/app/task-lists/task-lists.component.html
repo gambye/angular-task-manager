@@ -1,0 +1,33 @@
+<div class="taskListsWrapper">
+  <div class="taskLists">
+    <h3>Все задачи</h3>
+    <div
+      class="addCategory"
+      *ngIf="notAddingNewCategory; else addingNewCategory"
+      (click)="newCategoryToggle()"
+    >
+      <span class="plus">+</span>
+      <span class="gray">Добавить категорию</span>
+    </div>
+    <ng-template #addingNewCategory>
+      <div class="addCategory">
+        <input
+          required
+          type="text"
+          maxlength="22"
+          placeholder="Название категории"
+          [(ngModel)]="newListName"
+        />
+        <button type="submit" (click)="addNewCategory()">Сохранить</button>
+        <button (click)="newCategoryToggle()">Отмена</button>
+      </div>
+    </ng-template>
+    <div class="listsSection">
+      <app-task-list
+        *ngFor="let iterList of lists"
+        (deleteListEvent)="updateLists()"
+        [list]="iterList"
+      ></app-task-list>
+    </div>
+  </div>
+</div>

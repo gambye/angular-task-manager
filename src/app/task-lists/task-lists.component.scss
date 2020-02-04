@@ -1,0 +1,38 @@
+.addCategory {
+    margin-bottom: 0.7rem;
+    margin-top: 0.8rem;
+
+    & button {
+        margin-left: 1rem;
+    }
+}
+
+.gray {
+    color: gray;
+
+    &:hover {
+        color: firebrick;
+    }
+}
+
+.plus {
+    font-size: 1.5rem;
+    color: firebrick;
+}
+
+span {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:first-child {
+        margin-right: 0.5rem;
+    }
+}
+
+.listsSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}

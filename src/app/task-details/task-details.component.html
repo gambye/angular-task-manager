@@ -1,0 +1,16 @@
+<div class="taskWrapper">
+  <h2>{{ task?.name }}</h2>
+  <textarea
+    cols="100"
+    rows="20"
+    maxlength="2500"
+    [(ngModel)]="taskNewDescription"
+    >{{ task?.description }}</textarea
+  >
+  <div class="buttonsWrapper">
+    <a class="nav-link" routerLink="/lists" routerLinkActive="active"
+      ><button>К списку задач</button></a
+    >
+    <button (click)="updateDescription()">Обновить описание задачи</button>
+  </div>
+</div>

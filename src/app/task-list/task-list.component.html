@@ -1,0 +1,91 @@
+<hr />
+<div class="list-wrapper">
+  <!-- Показываем блок с именем листа в обычном режиме -->
+  <div class="listHeader" *ngIf="notUpdatingList; else updatingList">
+    <a>
+      <i
+        (click)="toggleList()"
+        aria-hidden="true"
+        class="fa"
+        [class.fa-arrow-circle-right]="showTasks === false"
+        [class.fa-arrow-circle-down]="showTasks === true"
+        title="Скрыть / показать задачи"
+      >
+      </i>
+    </a>
+    <span title="Редактировать название" (click)="editListName()"
+      >{{ list.name }}
+    </span>
+    <span style="margin-left: 0;">({{ tasks?.length }})</span>
+    <a>
+      <i
+        title="Удалить лист"
+        (click)="deleteList()"
+        class="fa fa-trash-o"
+        aria-hidden="true"
+      ></i>
+    </a>
+  </div>
+  <!-- Показываем блок для редактирования имени листа -->
+  <ng-template #updatingList>
+    <input maxlength="22" type="text" [(ngModel)]="newListName" />
+    <button (click)="updateList()">Сохранить</button>
+    <button (click)="editListName()">Отмена</button>
+  </ng-template>
+  <!-- Отображаем список задач из текущего листа -->
+  <div *ngIf="showTasks">
+    <div
+      class="dropList"
+      cdkDropList
+      #taskList="cdkDropList"
+      [cdkDropListData]="tasks"
+      (cdkDropListDropped)="onDrop($event)"
+    >
+      <app-task
+        *ngFor="let iterTask of tasks"
+        cdkDrag
+        (updateTaskEvent)="updateView()"
+        [task]="iterTask"
+      ></app-task>
+    </div>
+  </div>
+  <!-- Отображаем кнопку для добавления новой задачи -->
+  <div
+    *ngIf="notAddingList; else addingList"
+    (click)="addTask()"
+    class="addTask"
+  >
+    <span class="plus">+</span><span class="gray">Добавить задачу</span>
+  </div>
+  <!-- При нажатии на кнопку отображаем интерфейс для добавления новой задачи -->
+  <ng-template #addingList>
+    <div class="addingTask">
+      <div class="nameDescrWrapper">
+        <input
+          required
+          placeholder="Имя задачи"
+          max="22"
+          type="text"
+          [(ngModel)]="newTaskName"
+        />
+        <textarea
+          rows="15"
+          class="description"
+          required
+          placeholder="Описание задачи"
+          maxlength="2500"
+          [(ngModel)]="newTaskDescription"
+        ></textarea>
+
+        <button (click)="addNewTask()">Сохранить</button>
+        <button (click)="closeAdding()">Отмена</button>
+      </div>
+      <ngb-datepicker
+        class="picker"
+        #dp
+        [(ngModel)]="model"
+        (navigate)="date = $event.next"
+      ></ngb-datepicker>
+    </div>
+  </ng-template>
+</div>

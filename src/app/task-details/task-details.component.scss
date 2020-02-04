@@ -1,0 +1,28 @@
+.taskWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    flex-direction: column;
+    width: 80%;
+
+    // padding: 1rem auto;
+}
+
+textarea {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    resize: none;
+}
+
+a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.buttonsWrapper {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
