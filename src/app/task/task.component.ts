@@ -26,7 +26,6 @@ export class TaskComponent implements OnInit, OnDestroy {
 
   taskNotEditing = true;
   updatedName: string;
-  updatedTerm: Date;
   deadline = false;
   expired = false;
   taskCompleted = false;
@@ -40,12 +39,15 @@ export class TaskComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.updatedName = this.task.name;
-    this.updatedTerm = this.task.term;
     this.updateTermStatus();
     this.updateTaskCompleted();
+    this.setModel();
+  }
+
+  setModel() {
     const yearDate = new Date(this.task.term).getFullYear();
-    const monthDate = new Date(this.task.term).getMonth();
-    const dayDate = new Date(this.task.term).getDay();
+    const monthDate = new Date(this.task.term).getMonth() + 1;
+    const dayDate = new Date(this.task.term).getDate();
     this.model = {
       year: +yearDate,
       month: +monthDate,
@@ -55,14 +57,7 @@ export class TaskComponent implements OnInit, OnDestroy {
 
   toggleTask() {
     this.taskNotEditing = !this.taskNotEditing;
-    const yearDate = new Date(this.task.term).getFullYear();
-    const monthDate = new Date(this.task.term).getMonth() + 1;
-    const dayDate = new Date(this.task.term).getDate();
-    this.model = {
-      year: +yearDate,
-      month: +monthDate,
-      day: +dayDate
-    };
+    this.setModel();
   }
 
   deleteTask() {
@@ -113,11 +108,10 @@ export class TaskComponent implements OnInit, OnDestroy {
         termArray[i] = '0' + termArray[i];
       }
     }
-    this.updatedTerm = new Date(termArray.join('-'));
 
     const newTask = this.task;
     newTask.name = this.updatedName;
-    newTask.term = this.updatedTerm;
+    newTask.term = new Date(termArray.join('-'));
     newTask.isCompleted = this.taskCompleted;
 
     this.listService

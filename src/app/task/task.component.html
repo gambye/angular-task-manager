@@ -46,7 +46,6 @@
 <ng-template #taskEditing>
   <div class="updateWrapper">
     <input type="text" maxlength="22" [(ngModel)]="updatedName" />
-    <!-- <input type="number" [(ngModel)]="updatedTerm" /> -->
     <button (click)="updateTask(true, true)">Сохранить</button>
     <button (click)="toggleTask()">Отмена</button>
     <ngb-datepicker
