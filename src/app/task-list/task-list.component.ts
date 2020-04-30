@@ -30,14 +30,14 @@ export class TaskListComponent implements OnInit, OnDestroy {
   model: NgbDateStruct;
   date: { year: number; month: number };
 
-  private tasks: Task[];
-  private showTasks = true;
-  private newListName: string;
-  private notUpdatingList = true;
-  private notAddingList = true;
-  private newTaskName: string;
-  private newTaskTerm: Date;
-  private newTaskDescription: string;
+  public tasks: Task[];
+  public showTasks = true;
+  public newListName: string;
+  public notUpdatingList = true;
+  public notAddingList = true;
+  public newTaskName: string;
+  public newTaskTerm: Date;
+  public newTaskDescription: string;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 

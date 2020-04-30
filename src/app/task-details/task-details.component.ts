@@ -11,9 +11,9 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./task-details.component.scss']
 })
 export class TaskDetailsComponent implements OnInit, OnDestroy {
-  private ngUnsubscribe = new Subject();
-  private task: Task;
-  private taskNewDescription: string;
+  public ngUnsubscribe = new Subject();
+  public task: Task;
+  public taskNewDescription: string;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 

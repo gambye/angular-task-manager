@@ -11,7 +11,7 @@ import { List } from '../models/task-list.model';
   providedIn: 'root'
 })
 export class ListService {
-  private apiURL = 'http://localhost:3000';
+  private apiURL = 'my-json-server.typicode.com';
 
   constructor(private http: HttpClient) {}
 

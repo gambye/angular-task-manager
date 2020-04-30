@@ -10,9 +10,9 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./task-lists.component.scss']
 })
 export class TaskListsComponent implements OnInit, OnDestroy {
-  private lists: List[];
-  private notAddingNewCategory = true;
-  private newListName: string;
+  public lists: List[];
+  public notAddingNewCategory = true;
+  public newListName: string;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 
