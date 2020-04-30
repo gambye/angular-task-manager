@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "json-server --watch ./server/database.json"
+    "server": "json-server --watch ./server/database.json",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +30,7 @@
     "faker": "^4.1.0",
     "firebase": "^7.8.0",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^2.2.0",
     "json-server": "^0.15.1",
     "rxjs": "^6.5.4",
     "tslib": "^1.10.0",
