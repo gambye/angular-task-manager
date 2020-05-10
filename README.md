@@ -19,5 +19,5 @@ You’ll need [Node.js](https://nodejs.org/) installed on your computer.
 ## Application preview
 
 <p align="center">
-  <img src="https://i.imgur.com/Mz6w7rS.png" alt="Bootstrap logo" width="666" height="486">
+  <img src="https://i.imgur.com/RsZ7QHe.jpg" alt="Bootstrap logo" width="666" height="486">
 </p>
