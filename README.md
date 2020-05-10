@@ -1,5 +1,5 @@
 # Task-manager
-Task-manager it's web application for getting all tasks out of your head and onto your to-do list
+Task-manager is a web application for getting all tasks out of your head and onto your to-do list
 
 ## Quick Start
 
