@@ -9,17 +9,17 @@
         class="fa"
         [class.fa-arrow-circle-right]="showTasks === false"
         [class.fa-arrow-circle-down]="showTasks === true"
-        title="Скрыть / показать задачи"
+        title="Close / open tasks"
       >
       </i>
     </a>
-    <span title="Редактировать название" (click)="editListName()"
+    <span title="Edit list name" (click)="editListName()"
       >{{ list.name }}
     </span>
     <span style="margin-left: 0;">({{ tasks?.length }})</span>
     <a>
       <i
-        title="Удалить лист"
+        title="Delete list"
         (click)="deleteList()"
         class="fa fa-trash-o"
         aria-hidden="true"
@@ -29,8 +29,8 @@
   <!-- Показываем блок для редактирования имени листа -->
   <ng-template #updatingList>
     <input maxlength="22" type="text" [(ngModel)]="newListName" />
-    <button (click)="updateList()">Сохранить</button>
-    <button (click)="editListName()">Отмена</button>
+    <button (click)="updateList()">Save</button>
+    <button (click)="editListName()">Cancel</button>
   </ng-template>
   <!-- Отображаем список задач из текущего листа -->
   <div *ngIf="showTasks">
@@ -55,7 +55,7 @@
     (click)="addTask()"
     class="addTask"
   >
-    <span class="plus">+</span><span class="gray">Добавить задачу</span>
+    <span class="plus">+</span><span class="gray">Add task</span>
   </div>
   <!-- При нажатии на кнопку отображаем интерфейс для добавления новой задачи -->
   <ng-template #addingList>
@@ -63,7 +63,7 @@
       <div class="nameDescrWrapper">
         <input
           required
-          placeholder="Имя задачи"
+          placeholder="Task name"
           max="22"
           type="text"
           [(ngModel)]="newTaskName"
@@ -72,13 +72,13 @@
           rows="15"
           class="description"
           required
-          placeholder="Описание задачи"
+          placeholder="Task description"
           maxlength="2500"
           [(ngModel)]="newTaskDescription"
         ></textarea>
 
-        <button (click)="addNewTask()">Сохранить</button>
-        <button (click)="closeAdding()">Отмена</button>
+        <button (click)="addNewTask()">Save</button>
+        <button (click)="closeAdding()">Cancel</button>
       </div>
       <ngb-datepicker
         class="picker"

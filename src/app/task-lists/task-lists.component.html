@@ -1,13 +1,13 @@
 <div class="taskListsWrapper">
   <div class="taskLists">
-    <h3>Все задачи</h3>
+    <h3>TO-DO LIST</h3>
     <div
       class="addCategory"
       *ngIf="notAddingNewCategory; else addingNewCategory"
       (click)="newCategoryToggle()"
     >
       <span class="plus">+</span>
-      <span class="gray">Добавить категорию</span>
+      <span class="gray">Add category</span>
     </div>
     <ng-template #addingNewCategory>
       <div class="addCategory">
@@ -15,11 +15,11 @@
           required
           type="text"
           maxlength="22"
-          placeholder="Название категории"
+          placeholder="Category name"
           [(ngModel)]="newListName"
         />
-        <button type="submit" (click)="addNewCategory()">Сохранить</button>
-        <button (click)="newCategoryToggle()">Отмена</button>
+        <button type="submit" (click)="addNewCategory()">Save</button>
+        <button (click)="newCategoryToggle()">Cancel</button>
       </div>
     </ng-template>
     <div class="listsSection">

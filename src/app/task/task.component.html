@@ -12,7 +12,7 @@
   ></i>
   <span
     [class.line]="task.isCompleted === true"
-    title="Редактировать название задачи"
+    title="Edit task name"
     class="name"
     (click)="toggleTask()"
     >{{ task.name }}
@@ -21,13 +21,13 @@
     <button
       [class.deadline]="deadline === true"
       [class.expired]="expired === true"
-      title="Срок задачи в днях"
+      title="Task completion date"
       class="term"
     >
       {{ task.term | date }}
     </button>
     <a
-      title="Посмотреть описание задачи"
+      title="Open task description"
       class="nav-link"
       [routerLink]="['/task', task.id]"
       routerLinkActive="active"
@@ -35,7 +35,7 @@
     ></a>
     <a>
       <i
-        title="Закрыть задачу"
+        title="Close task"
         (click)="deleteTask()"
         class="fa fa-trash-o"
         aria-hidden="true"
@@ -46,8 +46,8 @@
 <ng-template #taskEditing>
   <div class="updateWrapper">
     <input type="text" maxlength="22" [(ngModel)]="updatedName" />
-    <button (click)="updateTask(true, true)">Сохранить</button>
-    <button (click)="toggleTask()">Отмена</button>
+    <button (click)="updateTask(true, true)">Save</button>
+    <button (click)="toggleTask()">Cancel</button>
     <ngb-datepicker
       class="picker"
       #dp

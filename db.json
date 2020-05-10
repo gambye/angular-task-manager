@@ -2,10 +2,10 @@
   "lists": [
     {
       "id": 2,
-      "name": "Финансы"
+      "name": "Finance"
     },
     {
-      "name": "Английский язык",
+      "name": "English",
       "id": 3
     }
   ],
@@ -13,56 +13,56 @@
     {
       "id": 4,
       "parentId": 2,
-      "name": "Финансовая грамотность",
-      "description": "Пройти курсы финансовой грамотности, изучать финансы и т.д.",
-      "term": "2020-02-08T00:00:00.000Z",
-      "isCompleted": false
+      "name": "Financial literacy",
+      "description": "Take financial literacy courses, study finance etc",
+      "term": "2020-10-08T00:00:00.000Z",
+      "isCompleted": true
     },
     {
       "id": 6,
       "parentId": 2,
-      "name": "Акции",
-      "description": "Изучить рынок мировых акций и узнать лучшие в соотношении профит/безопасность",
-      "term": "2020-02-09T00:00:00.000Z",
+      "name": "Stocks",
+      "description": "Explore stock market",
+      "term": "2020-12-09T00:00:00.000Z",
       "isCompleted": false
     },
     {
       "id": 7,
       "parentId": 2,
-      "name": "Вложения",
-      "description": "Узнать, куда лучше всего вложить сбережения в 2020 году",
-      "term": "2011-06-03T00:00:00.000Z",
+      "name": "Investments",
+      "description": "Find out the best ways to invest",
+      "term": "2019-09-03T00:00:00.000Z",
       "isCompleted": false
     },
     {
       "parentId": 3,
-      "name": "Курсы английского",
-      "description": "Пойти на курсы английского языка",
-      "term": "2020-02-03T00:00:00.000Z",
+      "name": "English courses",
+      "description": "Take English courses",
+      "term": "2020-10-03T00:00:00.000Z",
       "id": 8,
       "isCompleted": false
     },
     {
       "parentId": 3,
-      "name": "Песни",
-      "description": "Переводить текст английских песен",
-      "term": "2020-02-13T00:00:00.000Z",
+      "name": "Songs",
+      "description": "Translate songs from English",
+      "term": "2020-10-13T00:00:00.000Z",
       "id": 9,
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "parentId": 3,
-      "name": "Фильмы",
-      "description": "Смотреть фильмы на английском языке и переводить",
-      "term": "2020-02-05T00:00:00.000Z",
+      "name": "Movies",
+      "description": "Watch movies in english",
+      "term": "2018-12-05T00:00:00.000Z",
       "id": 10,
       "isCompleted": false
     },
     {
       "parentId": 3,
-      "name": "Общение",
-      "description": "Изучать английский с помощью общения с носителем языка",
-      "term": "2020-02-12T00:00:00.000Z",
+      "name": "Communication",
+      "description": "Learn English with a native speaker",
+      "term": "2020-12-12T00:00:00.000Z",
       "id": 11,
       "isCompleted": false
     }
