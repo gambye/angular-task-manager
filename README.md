@@ -15,3 +15,8 @@ You’ll need [Node.js](https://nodejs.org/) installed on your computer.
 2. Start the JSON-server `npm run server`
 3. Start the application `npm run start`
 4. Open your browser on http://localhost:4200/
+
+
+<p align="center">
+  <img src="https://sun9-45.userapi.com/c856016/v856016603/2356c0/UF8u3BTMc-A.jpg" alt="Bootstrap logo" width="72" height="72">
+</p>
