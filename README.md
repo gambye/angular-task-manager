@@ -4,6 +4,7 @@ Task-manager it's web application for getting all tasks out of your head and ont
 ## Quick Start
 
 1. Download and unzip [dice-fight.zip](https://github.com/ilerofeev/angular-task-manager/archive/master.zip) template archive.
+. Install dependencies: `npm install`.
 2. Open `index.html` in any browser.
 
 ## Quick Start via NPM
